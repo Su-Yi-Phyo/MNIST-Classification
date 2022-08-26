@@ -1,6 +1,5 @@
 streamlit
 numpy
 pickle5
-opencv
-cv2
+opencv-python
 pandas
