@@ -1,6 +1,6 @@
 streamlit
 numpy
-pickle
+pickle5
 opencv
 cv2
 pandas
