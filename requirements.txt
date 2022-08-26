@@ -1,0 +1,6 @@
+streamlit
+numpy
+pickle
+opencv
+cv2
+pandas
