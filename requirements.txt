@@ -1,5 +1,5 @@
 streamlit
 numpy
 pickle5
-opencv-python
+opencv-python-headless
 pandas
