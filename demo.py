@@ -17,17 +17,17 @@ st.markdown(
      </style>
   """,
 unsafe_allow_html=True)
-with open('W1','rb') as f:
-  W1= pickle.load(f)
+# with open('W1','rb') as f:
+#   W1= pickle.load(f)
 
-with open('W2','rb') as f:
-  W2= pickle.load(f)
+# with open('W2','rb') as f:
+#   W2= pickle.load(f)
 
-with open('b1','rb') as f:
-  b1= pickle.load(f)
+# with open('b1','rb') as f:
+#   b1= pickle.load(f)
 
-with open('b2','rb') as f:
-  b2= pickle.load(f)
+# with open('b2','rb') as f:
+#   b2= pickle.load(f)
 
 #forward
 def ReLU(Z):
