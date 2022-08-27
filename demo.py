@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 import pickle 
-import cv2
+#import cv2
 
 st.set_page_config(
      page_title="Digit Recognizer")
