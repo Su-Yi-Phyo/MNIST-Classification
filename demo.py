@@ -57,54 +57,54 @@ if uploadfile is not None:
         _, _, _, A2 = forward_prop(W1, b1, W2, b2, X)
         predictions = get_predictions(A2)
         probability = np.amax(A2) * 100
-       return predictions, probability
+        return predictions, probability
      
-    img=cv2.imread(uploadfile)
-    resized_img=cv2.resize(img,(28,28))
-    gray=cv2.cvtColor(resized_img,cv2.COLOR_BGR2GRAY)
-    blur=cv2.GaussianBlur(gray,(5,5),cv2.BORDER_DEFAULT)
-    ret,fimg=cv2.threshold(blur,250,255,cv2.THRESH_BINARY_INV)
-    input_img=fimg.flatten()
-    input_img=np.reshape(input_img,(784,1))
-    input_img=input_img/255
+   img=cv2.imread(uploadfile)
+   resized_img=cv2.resize(img,(28,28))
+   gray=cv2.cvtColor(resized_img,cv2.COLOR_BGR2GRAY)
+   blur=cv2.GaussianBlur(gray,(5,5),cv2.BORDER_DEFAULT)
+   ret,fimg=cv2.threshold(blur,250,255,cv2.THRESH_BINARY_INV)
+   input_img=fimg.flatten()
+   input_img=np.reshape(input_img,(784,1))
+   input_img=input_img/255
 
 
-    result=predictions
-    st.write("Your image:")
-    st.image(uploadfile)
-    
-    if result==[0]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:0</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[1]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:1</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[2]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:2</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[3]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:3</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[4]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:4</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[5]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:5</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[6]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:6</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[7]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:7</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[8]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:8</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    elif result==[9]:
-     st.markdown(f'<h1 style="font-size:24px;">Result:9</h1>', unsafe_allow_html=True)
-     st.write("Confidence:",probability)
-    else:
-     st.markdown(f'<h1 style="font-size:30px; color:red">No Result</h1>', unsafe_allow_html=True)
+   result=predictions
+   st.write("Your image:")
+   st.image(uploadfile)
+   
+   if result==[0]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:0</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[1]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:1</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[2]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:2</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[3]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:3</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[4]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:4</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[5]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:5</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[6]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:6</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[7]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:7</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[8]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:8</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   elif result==[9]:
+    st.markdown(f'<h1 style="font-size:24px;">Result:9</h1>', unsafe_allow_html=True)
+    st.write("Confidence:",probability)
+   else:
+    st.markdown(f'<h1 style="font-size:30px; color:red">No Result</h1>', unsafe_allow_html=True)
 
 else:
     st.write("You should upload file")
