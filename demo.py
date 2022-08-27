@@ -10,7 +10,7 @@ st.markdown(
   f"""
     <style>
      .stApp {{
-        background-image: url("https://img.freepik.com/premium-photo/background-diabetic-disease-concept-with-copy-space-world-diabetes-day-banner_132254-879.jpg?w=2000");
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/000/151/791/small_2x/falling-numbers-matrix-background-vector.jpg");
         background-attachment: fixed;
         background-size: cover}}
      </style>
