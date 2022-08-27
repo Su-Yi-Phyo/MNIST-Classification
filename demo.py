@@ -10,7 +10,7 @@ st.markdown(
   f"""
     <style>
      .stApp {{
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRytWY61RnHQHu934tyjvpUOOIrVYdbN2falCZxMK62o60VxBK9JUoNoncVQmKxx_DKp5c&usqp=CAU");
+        background-image: url("https://img.freepik.com/premium-vector/binary-matrix-code-background_6735-815.jpg");
         background-attachment: fixed;
         background-size: cover}}
      </style>
