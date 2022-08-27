@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np 
 import pickle 
 import cv2
+from PIL import Image
 
 st.set_page_config(
      page_title="Digit Recognizer")
@@ -49,9 +50,14 @@ st.header('Digit Recognizer')
 uploadfile = st.file_uploader("Upload the digit image you want to test:")
 
 if uploadfile is not None:
-     
-    img=cv2.imread(uploadfile)
-    resized_img=cv2.resize(img,(28,28))
+    
+    img = Image.open(uploadfile)
+    img_array = np.array(img)
+
+    # cv2.imwrite('out.png')
+    # image =cv2.imread('out.png')
+
+    resized_img=cv2.resize(img_array,(28,28))
     gray=cv2.cvtColor(resized_img,cv2.COLOR_BGR2GRAY)
     blur=cv2.GaussianBlur(gray,(5,5),cv2.BORDER_DEFAULT)
     ret,fimg=cv2.threshold(blur,250,255,cv2.THRESH_BINARY_INV)
@@ -59,7 +65,7 @@ if uploadfile is not None:
     input_img=np.reshape(input_img,(784,1))
     input_img=input_img/255
 
-
+    predictions, probability=make_predictions(W1,b1,W2,b2,input_img)
     result=predictions
     st.write("Your image:")
     st.image(uploadfile)
