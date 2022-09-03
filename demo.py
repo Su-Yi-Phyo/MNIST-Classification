@@ -8,6 +8,17 @@ from PIL import Image
 st.set_page_config(
      page_title="Digit Recognizer")
 
+st.markdown(
+  f"""
+    <style>
+     .stApp {{
+        background-image: url("https://img.freepik.com/premium-vector/binary-code-design-illustration_176411-1484.jpg");
+        background-attachment: fixed;
+        background-size: cover}}
+     </style>
+  """,
+unsafe_allow_html=True)
+
 with open('W1','rb') as f:
   W1= pickle.load(f)
 
@@ -59,11 +70,7 @@ if uploadfile is not None:
 
     resized_img=cv2.resize(img_array,(28,28))
     gray=cv2.cvtColor(resized_img,cv2.COLOR_BGR2GRAY)
-    blur=cv2.GaussianBlur(gray,(5,5),cv2.BORDER_DEFAULT)
-    ret,fimg=cv2.threshold(blur,250,255,cv2.THRESH_BINARY_INV)
-    input_img=fimg.flatten()
-    input_img=np.reshape(input_img,(784,1))
-    input_img=input_img/255
+    input_img=gray.reshape(784,1)/255
 
     predictions, probability=make_predictions(W1,b1,W2,b2,input_img)
     result=predictions
